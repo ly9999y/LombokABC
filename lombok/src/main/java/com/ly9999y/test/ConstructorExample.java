@@ -1,0 +1,48 @@
+package com.ly9999y.test;
+
+import lombok.*;
+
+@RequiredArgsConstructor(staticName = "of")
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
+public class ConstructorExample<T> {
+	private int x, y;
+	@NonNull
+	private T description;
+
+	@NoArgsConstructor
+	public static class NoArgsExample {
+		@NonNull
+		private String field;
+	}
+}
+
+
+
+//public class ConstructorExample<T> {
+//	private int x, y;
+//	@NonNull private T description;
+//
+//	private ConstructorExample(T description) {
+//		if (description == null) throw new NullPointerException("description");
+//		this.description = description;
+//	}
+//
+//	public static <T> ConstructorExample<T> of(T description) {
+//		return new ConstructorExample<T>(description);
+//	}
+//
+//	@java.beans.ConstructorProperties({"x", "y", "description"})
+//	protected ConstructorExample(int x, int y, T description) {
+//		if (description == null) throw new NullPointerException("description");
+//		this.x = x;
+//		this.y = y;
+//		this.description = description;
+//	}
+//
+//	public static class NoArgsExample {
+//		@NonNull private String field;
+//
+//		public NoArgsExample() {
+//		}
+//	}
+//}
